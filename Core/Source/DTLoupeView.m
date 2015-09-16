@@ -90,7 +90,7 @@ NSString * const DTLoupeDidHide = @"DTLoupeDidHide";
 {
 	static dispatch_once_t onceToken;
 	static UIWindow *_loupeWindow = nil;
-	
+#ifndef DT_EXTENSION
 	dispatch_once(&onceToken, ^{
 		
 		// find application main Window and attach it there
@@ -103,7 +103,7 @@ NSString * const DTLoupeDidHide = @"DTLoupeDidHide";
 		_loupeWindow.userInteractionEnabled = NO;
 		_loupeWindow.windowLevel = UIWindowLevelAlert;
 	});
-	
+#endif
 	return _loupeWindow;
 }
 

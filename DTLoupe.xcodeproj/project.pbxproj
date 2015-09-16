@@ -62,6 +62,10 @@
 		A7D8FF7514E17A8600BF8CCD /* kb-magnifier-ranged-mask.png in Resources */ = {isa = PBXBuildFile; fileRef = A7D8FF0C14E169C100BF8CCD /* kb-magnifier-ranged-mask.png */; };
 		A7D8FF7614E17A8600BF8CCD /* kb-magnifier-ranged-mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7D8FF0D14E169C100BF8CCD /* kb-magnifier-ranged-mask@2x.png */; };
 		A7D8FF7A14E17B2100BF8CCD /* DTLoupe.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A7D8FF5B14E17A6600BF8CCD /* DTLoupe.bundle */; };
+		E7A5C02D1BA99E4600D7F626 /* DTLoupeLayerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C3121E184AE83E00442A2F /* DTLoupeLayerDelegate.m */; };
+		E7A5C02E1BA99E4600D7F626 /* DTLoupeView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8FF0F14E169E500BF8CCD /* DTLoupeView.m */; };
+		E7A5C0301BA99E4600D7F626 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F01D89213B248CB00419BD7 /* Foundation.framework */; };
+		E7A5C0321BA99E4600D7F626 /* DTLoupeView.h in Headers */ = {isa = PBXBuildFile; fileRef = A7D8FF0E14E169E500BF8CCD /* DTLoupeView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +133,7 @@
 		A7D8FF3214E16DD100BF8CCD /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		A7D8FF5B14E17A6600BF8CCD /* DTLoupe.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DTLoupe.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D8FF7714E17AA000BF8CCD /* ResourceBundle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Info.plist"; sourceTree = "<group>"; };
+		E7A5C0371BA99E4600D7F626 /* libDTLoupeExt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDTLoupeExt.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +165,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E7A5C02F1BA99E4600D7F626 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7A5C0301BA99E4600D7F626 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -180,6 +193,7 @@
 				0F01D88C13B248CB00419BD7 /* Demo App.app */,
 				A7D8FEE414E1693300BF8CCD /* libDTLoupe.a */,
 				A7D8FF5B14E17A6600BF8CCD /* DTLoupe.bundle */,
+				E7A5C0371BA99E4600D7F626 /* libDTLoupeExt.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -314,6 +328,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E7A5C0311BA99E4600D7F626 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7A5C0321BA99E4600D7F626 /* DTLoupeView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -369,6 +391,23 @@
 			productReference = A7D8FF5B14E17A6600BF8CCD /* DTLoupe.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
+		E7A5C02B1BA99E4600D7F626 /* DTLoupeExt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7A5C0331BA99E4600D7F626 /* Build configuration list for PBXNativeTarget "DTLoupeExt" */;
+			buildPhases = (
+				E7A5C02C1BA99E4600D7F626 /* Sources */,
+				E7A5C02F1BA99E4600D7F626 /* Frameworks */,
+				E7A5C0311BA99E4600D7F626 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DTLoupeExt;
+			productName = "Static Library";
+			productReference = E7A5C0371BA99E4600D7F626 /* libDTLoupeExt.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -394,6 +433,7 @@
 				A7D8FEE314E1693300BF8CCD /* Static Library */,
 				A7D8FF5A14E17A6600BF8CCD /* Resource Bundle */,
 				A7DF6EEF173A9646004F623B /* Documentation */,
+				E7A5C02B1BA99E4600D7F626 /* DTLoupeExt */,
 			);
 		};
 /* End PBXProject section */
@@ -484,6 +524,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7A5C02C1BA99E4600D7F626 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7A5C02D1BA99E4600D7F626 /* DTLoupeLayerDelegate.m in Sources */,
+				E7A5C02E1BA99E4600D7F626 /* DTLoupeView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -754,6 +803,84 @@
 			};
 			name = Release;
 		};
+		E7A5C0341BA99E4600D7F626 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					armv7s,
+				);
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/Static_Library.dst;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Core/DTLoupe-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"DT_EXTENSION=1",
+				);
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		E7A5C0351BA99E4600D7F626 /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					armv7s,
+				);
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/Static_Library.dst;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Core/DTLoupe-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"COVERAGE=1",
+					"DT_EXTENSION=1",
+				);
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Coverage;
+		};
+		E7A5C0361BA99E4600D7F626 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					armv7s,
+				);
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/Static_Library.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Core/DTLoupe-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "DT_EXTENSION=1";
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -803,6 +930,16 @@
 				A7DF6EF0173A9646004F623B /* Debug */,
 				A79C2FE81B60DC7700E5491A /* Coverage */,
 				A7DF6EF1173A9646004F623B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E7A5C0331BA99E4600D7F626 /* Build configuration list for PBXNativeTarget "DTLoupeExt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7A5C0341BA99E4600D7F626 /* Debug */,
+				E7A5C0351BA99E4600D7F626 /* Coverage */,
+				E7A5C0361BA99E4600D7F626 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
